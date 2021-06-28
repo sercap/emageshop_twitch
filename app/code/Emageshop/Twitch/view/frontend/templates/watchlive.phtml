@@ -1,0 +1,14 @@
+<?php
+// get current product data
+$product = $block->getProduct();
+$liveStream = $block->getLiveStream($product->getName());
+
+?>
+<p>Oyun Adı : <?php echo $liveStream["game_name"] ?></p>
+<p><img src="<?php echo $liveStream["thumbnail_url"] ?>" width="200" height="200"></p>
+<iframe
+    src="https://player.twitch.tv/?video=<?php echo $liveStream["id"] ?>&parent=demo.e-magento.shop&autoplay=true"
+    height="100%"
+    width="100%"
+    allowfullscreen="true">
+</iframe>
